@@ -1,7 +1,7 @@
 ---
 channel: stable
 addons:
-  adb:
+  hassio-homegear-generic:
     repository: devRoemer/hassio-homegear-generic
     target: hassio-homegear-generic
     image: devroemer/hassio-homegear-generic-{arch}
