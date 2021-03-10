@@ -1,6 +1,6 @@
 {
   "name": "Homegear",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "hassio-homegear-generic",
   "description": "Homegear add-on",
   "url": "https://github.com/devRoemer/hassio-homegear-generic",
