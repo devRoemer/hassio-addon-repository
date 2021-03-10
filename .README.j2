@@ -1,0 +1,57 @@
+# DevRoemers Home Assistant Add-ons
+
+![Project Stage][project-stage-shield]
+![Maintenance][maintenance-shield]
+[![License][license-shield]](LICENSE.md)
+
+## About
+
+Home Assistant allows anyone to create add-on repositories to share their
+add-ons for Home Assistant easily. This repository is one of those repositories,
+providing extra Home Assistant add-ons for your installation.
+
+## Installation
+
+Use the following URL to add this repository:
+
+```txt
+{{ repo }}
+```
+
+Detailed instructions on how to add this repo can be found [here](https://www.home-assistant.io/common-tasks/os#installing-third-party-add-ons).
+
+## Add-ons provided by this repository
+
+{% for addon in addons %}
+### &#10003; [{{ addon.name }}][addon-{{ addon.target }}]
+
+![Latest Version][{{ addon.target }}-version-shield]
+![Supports armhf Architecture][{{ addon.target }}-armhf-shield]
+![Supports armv7 Architecture][{{ addon.target }}-armv7-shield]
+![Supports aarch64 Architecture][{{ addon.target }}-aarch64-shield]
+![Supports amd64 Architecture][{{ addon.target }}-amd64-shield]
+![Supports i386 Architecture][{{ addon.target }}-i386-shield]
+
+{{ addon.description }}
+
+[:books: {{ addon.name }} add-on documentation][addon-doc-{{ addon.target }}]
+
+[:bug: Open an issue for the add-on: {{ addon.name }}][{{ addon.target }}-issue]
+{% endfor %}
+
+{% for addon in addons %}
+[addon-{{ addon.target }}]: {{ addon.repo }}/tree/{{ addon.version }}
+[addon-doc-{{ addon.target}}]: {{ addon.repo }}/blob/{{ addon.version }}/README.md
+[{{ addon.target }}-issue]: {{ addon.repo }}/issues
+[{{ addon.target }}-version-shield]: https://img.shields.io/badge/version-{{ addon.version }}-blue.svg
+{% for arch in ['aarch64', 'amd64', 'armhf', 'armv7', 'i386'] %}
+{% if arch in addon.archs %}
+[{{ addon.target }}-{{ arch }}-shield]: https://img.shields.io/badge/{{ arch }}-yes-green.svg
+{% else %}
+[{{ addon.target }}-{{ arch }}-shield]: https://img.shields.io/badge/{{ arch }}-no-red.svg
+{% endif %}
+{% endfor %}
+{% endfor %}
+[license-shield]: https://img.shields.io/github/license/{{ name }}.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
