@@ -1,4 +1,5 @@
 ## What’s changed
 
-* Homegear stable 0.7.48-3324 (October 14, 2020)
-* Add logos and docs
+* Fix permissions for usb and gpio devices
+
+Homegear stable 0.7.48-3324 (October 14, 2020)
