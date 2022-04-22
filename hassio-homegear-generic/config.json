@@ -1,6 +1,6 @@
 {
   "name": "Homegear",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "slug": "hassio-homegear-generic",
   "description": "Homegear add-on",
   "url": "https://github.com/devRoemer/hassio-homegear-generic",
@@ -8,8 +8,7 @@
     "aarch64",
     "amd64",
     "armhf",
-    "armv7",
-    "i386"
+    "armv7"
   ],
   "startup": "services",
   "uart": true,
@@ -21,7 +20,8 @@
     "SYS_RAWIO"
   ],
   "devices": [
-    "/dev/mem"
+    "/dev/mem",
+    "/dev/spidev0.0"
   ],
   "map": [
     "config:rw",
@@ -36,6 +36,12 @@
     "2001/tcp": "Homegear Web-Interface",
     "2002/tcp": "Homegear port 2002",
     "2003/tcp": "Homegear port 2003"
+  },
+  "options": {
+    "homegear_user": "homegear"
+  },
+  "schema": {
+    "homegear_user": "str"
   },
   "image": "devroemer/hassio-homegear-generic-{arch}"
 }
